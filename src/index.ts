@@ -7,15 +7,16 @@ import { Generator } from './types'
 export { Generator } from './types'
 
 export function generateCode(schema: string, generator: Generator | string): string {
-    if (typeof generator === 'string'){
+    if (typeof generator === 'string') {
       generator = generators[generator] || require(generator).generator
       if (!generator) {
         throw new Error(`Generator '${generator}' could not be found. Available generators:
 ${Object.keys(generators).map(k => `'${k}`).join(', ')}`)
       }
-    }
+    } 
 
     const document: DocumentNode = parse(schema, { noLocation: true })
+    
     const ast: GraphQLSchema = buildASTSchema(document)
  
     // Create types
