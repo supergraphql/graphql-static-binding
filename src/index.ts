@@ -17,7 +17,7 @@ export { Generator } from './types'
  *
  */
 const sanitizeSchema = (schema: string) =>
-    schema.replace(/\`/g, "\\`")
+    schema.replace(/\`/g, '\\`')
 
 export function generateCode(schema: string, generator: Generator | string): string {
     if (typeof generator === 'string'){
