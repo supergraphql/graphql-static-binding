@@ -18,7 +18,7 @@ Feature for Graphcool Typescript generator
       import { GraphQLResolveInfo } from 'graphql'
 
       const typeDefs = `
-      # The \`Query\` type
+      # The 'Query' type
       type Query {
         posts: [String]
       }`
